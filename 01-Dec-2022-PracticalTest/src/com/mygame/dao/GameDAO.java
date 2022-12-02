@@ -1,11 +1,10 @@
 package com.mygame.dao;
 
 public class GameDAO {
-	static String CityName[]={"Chennai","Mumbai","Delhi","Kolkata","Hyderabad"};
+	static String cityName[]= {"Chennai","Mumbai","Delhi","Kolkata","Hydrabad"};
 	
-	public String getCityName(String CityName) {
-		return CityName;
+	public String[] getCityNames()
+	{
+		return cityName;
 	}
-	
-
 }

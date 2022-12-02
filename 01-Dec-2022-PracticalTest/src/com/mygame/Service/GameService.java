@@ -1,14 +1,18 @@
 package com.mygame.Service;
-import com.mygame.dao.*;
+
+import com.mygame.dao.GameDAO;
+
 public class GameService {
-	GameDAO gamedao;
-     
-	public String getCityNameService() {
-		return CityName;
+	public String[] getCityNamesService()
+	{
+		GameDAO g = new GameDAO();
+		String s[] = g.getCityNames();
 		
+		return s;
 	}
-	public CityName[] getCityName() {
-		CityName gamedao[]=GameDao.getCityName();
-		return CityName;
+
+	public String[] GameService() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

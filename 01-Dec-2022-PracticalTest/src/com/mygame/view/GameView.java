@@ -1,29 +1,44 @@
 package com.mygame.view;
+import com.mygame.Service.*;
 
 public class GameView {
 	
-	public void displayCityNameBlanks(){
+	GameService s = new GameService();
+	
+	
+	public String[] displayCityNamesWithBlanks()
+	{
+		GameView v = new GameView();
+		String[] c = s.getCityNamesService();
 		
-		for(int i=0;i<CityName.length;i++) {
+		
+		for(int i = 0 ; i < c.length; i++)
+		{
+			int num = c[i].length();
+			int k = 0;
+			// int randomArray[]= null;
+			char arr[]= c[i].toCharArray();
 			
-			int length =cityName[i].length();
-			char cityNameCharArr[]=new char[length];
-			generateRandomNumber(length);
-			for(int j=0;j<length;j++) {
-				cityNameCharArr[j]=cityName[i].charAt(j);
-				for(int k=0;k<randomNumberArr.length;k++) {	
-					if(j==randomNumberArr[k])
-					cityNameCharArr[j]='-';		
+			while(k != 3)
+			{
+				int val = v.generateRandomnumber(num);
+				
+				for(int j=0; j < arr.length;j++)
+				{
+					if( i == val)
+					{
+						arr[i] = ' ';
+					}		
 				}
-			
+				
+				k++;
 			}
-			String newCityName=new String(cityNameCharArr);
-			cityNameWithBlanks[i]=newCityName;
-			System.out.println(cityNameWithBlanks[i]);
+			c[i] = String.valueOf(arr);
 		}
+		return c;
 	}
-		
-		
-	}
-
+	
+	
+	
+	
 }
